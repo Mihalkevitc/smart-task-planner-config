@@ -4,13 +4,12 @@ server:
 spring:
   application:
     name: service-discovery
-  main:
-    web-application-type: servlet  # Явно указываем servlet
 
+# САМОЕ ВАЖНОЕ - отключаем регистрацию Eureka клиента
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false    # Не регистрироваться в Eureka
+    fetch-registry: false          # Не получать реестр сервисов
   instance:
     hostname: localhost
 
@@ -18,4 +17,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,mappings
+        include: health,info
