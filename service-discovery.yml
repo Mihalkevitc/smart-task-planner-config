@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: service-discovery
+  main:
+    web-application-type: servlet  # Явно указываем servlet
 
 eureka:
   client:
